@@ -1,0 +1,71 @@
+*{
+    box-sizing: border-box;
+}
+.common {
+    width: 385px;
+    padding: 15px;
+    /* background-color: rgba(0, 0, 0, 0.2); */
+    /* background-color: rgba(0, 0, 0, 40%); */
+    /* background: linear-gradient(180deg, rgba(255, 255, 255, 0.79) 0%, rgba(240, 245, 255, 0) 100%); */
+    background: linear-gradient(180deg, rgba(107, 107, 107, 0.79) 0%, rgba(240, 245, 255, 0) 100%);
+    border-radius: 5px;
+    color: #fff;
+}
+
+.title {
+    font-family: 'Alleyn-Bold';
+    margin-bottom: 0;
+    margin-top: 0;
+    font-size: 30px;
+    transform: scaleY(1.2);
+}
+.time-day-month {
+    font-family: 'Alleyn-regular';
+    margin: 0;
+    font-size: 14px;
+}
+
+/*  */
+
+.container__weather {
+    display: flex;
+    justify-content: space-around;
+}
+
+.title-temp {
+    font-family: 'Alleyn-Medium';
+    font-size: 50px;
+    width: 205px;
+    height: 140px;
+    /* background-color: #fff; */
+    display: flex;
+    /* justify-content: space-between; */
+    justify-content: space-around;
+
+}
+.p-temp {
+    border-right: solid 2px #cdc7c7;
+    height: 70px;
+    line-height: 70px;
+    padding-right: 15px;
+    /* margin: 0; */
+    transform: scaleY(1.2);
+}
+
+/*  */
+.title-main {
+    font-family: 'Alleyn-Medium';
+    font-size: 24px;
+    /* margin-left: 15px; */
+    margin-top: 45px;
+    margin-bottom: 0;
+}
+.title-desc {
+    font-family: 'Alleyn-Medium';
+    /* margin-left: 15px; */
+    margin-top: 5px;
+}
+.title-humiditi {
+    margin-top: 5px;
+    margin-bottom: 0;
+}

@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,38 @@
   to {
     transform: rotate(360deg);
   }
+} */
+@font-face {
+  font-family: 'Alleyn-Bold';
+  src: url(./fonts/Alleyn-Bold.woff);
+}
+@font-face {
+  font-family: 'Alleyn-Medium';
+  src: url(./fonts/Alleyn-Medium.woff);
+}
+@font-face {
+  font-family: 'Alleyn-Regular';
+  src: url(./fonts/Alleyn-Regular.woff);
+}
+@font-face {
+  font-family: 'Alleyn-BookItalic';
+  src: url(./fonts/Alleyn-BookItalic.woff);
+}
+@font-face {
+  font-family: 'Alleyn-BoldItalic';
+  src: url(./fonts/Alleyn-BoldItalic.woff);
+}
+* {
+  box-sizing: border-box;
+}
+.App {
+
+    position: relative;
+    min-height: 100vh;
+  /* background-color: red; */
+  background-image: url(../src/images/1639922061_5-abrakadabra-fun-p-fon-dlya-pogodi-6.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  /* background-color: rgba(0, 0, 0, 0.7); */
 }

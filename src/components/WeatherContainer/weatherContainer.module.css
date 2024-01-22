@@ -1,0 +1,12 @@
+.common {
+    /* padding-top: 50px; */
+}
+.container__flex {
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.time__card {
+    display: flex;
+    gap: 20px;
+}

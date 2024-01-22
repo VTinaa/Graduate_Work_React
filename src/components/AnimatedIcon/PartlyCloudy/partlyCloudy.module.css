@@ -1,0 +1,113 @@
+.partly_cloudy {
+    /* position: relative;
+    width: 5rem;
+    height: 5rem; */
+    width: 70px;
+    height: 70px !important;
+}
+
+/* Сонце */
+.partly-cloudy-sun {
+    position: relative;
+    width: 5rem;
+    height: 5rem;
+    z-index: 1;
+     /*  */
+     top: 48px;
+}
+.partly-cloudy-sun:before {
+    box-shadow: none !important;
+}
+.partly-cloudy-sun:before {
+    content: "";
+    position: absolute;
+    height: 80%;
+    width: 80%;
+    top: 10%;
+    right: 10%;
+    border-radius: 50%;
+    z-index: 2;
+    background-color: #f1c40f;
+    background-image: radial-gradient(#f1c40f, #f39c12);
+    /* box-shadow: 0 0 25px #917508; */
+}
+
+.partly-cloudy-sun:after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    z-index: 1;
+    background-color: #f39c12;
+    will-change: opacity, transform;
+    animation: fadeIn 2s linear infinite reverse, scaleDown 2s linear infinite reverse;
+}
+@keyframes fadeIn {
+    0% {
+     opacity: 0;
+    }
+    100% {
+     opacity: 1;
+    }
+ }
+ @keyframes scaleDown {
+     0% {
+      transform: scale(1);
+     }
+     100% {
+      transform: scale(0.8);
+     }
+  }
+
+
+  /* Хмаринка */
+.partly-cloudy-cloud {
+    position: relative;
+    width: 3.5rem;
+    height: 3.5rem;
+    top: -6%;
+    /* bottom: -20px; */
+    z-index: 2;
+    will-change: transform;
+    -webkit-animation: translateUp 2s linear infinite alternate;
+    animation: translateUp 2s linear infinite alternate;
+}
+@keyframes translateUp {
+    0% {
+        transform: translatey(15%);
+    }
+    100% {
+        transform: translatey(0);
+    }
+}
+
+.partly-cloudy-cloud:before {
+    content: "";
+    position: absolute;
+    height: 40%;
+    width: 40%;
+    top: 30%;
+    right: 0%;
+    border-radius: 50%;
+    border-bottom-left-radius: 0;
+    z-index: 2;
+    background-color: #ecf0f1;
+    background-image: radial-gradient(#ecf0f1, #bdc3c7);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+}
+
+.partly-cloudy-cloud:after {
+    content: "";
+    position: absolute;
+    height: 60%;
+    width: 70%;
+    top: 10%;
+    right: 30%;
+    border-radius: 50%;
+    border-bottom-right-radius: 0;
+    z-index: 1;
+    background-color: #ecf0f1;
+    background-image: radial-gradient(#ecf0f1, #bdc3c7);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+}
