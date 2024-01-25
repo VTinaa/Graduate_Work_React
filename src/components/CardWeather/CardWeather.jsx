@@ -24,7 +24,9 @@ const CardWeather = (props) => {
                 {/* <div><Clouds /></div> */}
                 {/* <div><Storm /></div> */}
                 {/* <Rain /> */}
-                <PartlyCloudy />
+
+                {/* { icon === 'Clouds' && <PartlyCloudy /> } */}
+                { <PartlyCloudy /> }
                 {/* <p>{temp ? `${temp}°C` : '+8°'}</p> */}
                 <p className={styles['p-temp']}>{ '24°'}</p>
                 
@@ -33,7 +35,7 @@ const CardWeather = (props) => {
                 <p className={styles['title-main']}> { main } </p>
                 <p className={styles['title-humiditi']}>{ humidity } %</p>
                 <p className={styles['title-desc']}> { description } </p>
-                {/* {icon} */}
+                
             </div>
         </div>
         

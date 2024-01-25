@@ -2,7 +2,7 @@
     /* padding-top: 50px; */
 }
 .container__flex {
-    padding-top: 30px;
+    padding-top: 20px;
     display: flex;
     justify-content: space-between;
 }

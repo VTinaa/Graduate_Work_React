@@ -16,8 +16,14 @@
     font-size: 50px;
     color: #fff;
     margin: 0;
-    /* z-index: 11; */
-
+    z-index: 11;
+    margin-left: 55px;
+}
+.header i {
+    position: absolute;
+    color: rgba(57, 57, 57, 0.656);
+    font-size: 50px;
+    left: 102px;
 }
 /* .header img {
     width: 140px;

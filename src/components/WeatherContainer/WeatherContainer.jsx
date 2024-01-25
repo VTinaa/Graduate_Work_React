@@ -53,7 +53,7 @@ const WeatherContainer = () => {
               main={ weatherData.weather[0].main }
               humidity={ weatherData.main.humidity }
               description={ weatherData.weather[0].description }
-            // icon={weatherData.weather[0].icon}
+              icon={weatherData.weather[0].main}
             />
           )}
         </div>
@@ -75,6 +75,9 @@ const WeatherContainer = () => {
             sunset={ weatherData.sys.sunset }
           />
          )}
+      </div>
+      <div className={styles['weathe-day']}>
+
       </div>
     </PageWrapper>
   )

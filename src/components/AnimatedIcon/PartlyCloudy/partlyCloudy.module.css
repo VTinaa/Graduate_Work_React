@@ -15,6 +15,16 @@
      /*  */
      top: 48px;
 }
+/* timeCard */
+.small-padding {
+    top: 0;
+}
+.small-width {
+    width: 4rem;
+    height: 4rem;
+}
+/*  */
+
 .partly-cloudy-sun:before {
     box-shadow: none !important;
 }
@@ -73,6 +83,16 @@
     -webkit-animation: translateUp 2s linear infinite alternate;
     animation: translateUp 2s linear infinite alternate;
 }
+/* timeCard */
+.small-top {
+    top: -45px;
+}
+.small-width-cloud {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+/*  */
+
 @keyframes translateUp {
     0% {
         transform: translatey(15%);

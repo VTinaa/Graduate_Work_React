@@ -7,7 +7,8 @@ const Footer = () => {
             <PageWrapper>
                 <footer className={styles['footer']}>
                     <p>2024</p>
-                    <i>GitHub</i>
+                    {/* <i>GitHub</i> */}
+                    <i class="fa-brands fa-github"></i>
                     <p>Graduate work</p>
                 </footer>
             </PageWrapper>

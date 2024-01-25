@@ -59,14 +59,26 @@
 * {
   box-sizing: border-box;
 }
+
 .App {
 
     position: relative;
     min-height: 100vh;
   /* background-color: red; */
-  background-image: url(../src/images/1639922061_5-abrakadabra-fun-p-fon-dlya-pogodi-6.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   /* background-color: rgba(0, 0, 0, 0.7); */
+}
+
+.cloud-bg {
+  background-image: url(../src/images/1639922061_5-abrakadabra-fun-p-fon-dlya-pogodi-6.png);
+}
+
+.rain-bg {
+  background-image: url("https://mf-static.meteofor.st/assets/bg-desktop/n_c3_r2.jpg");
+}
+
+.sun-bg {
+  background-image: url("https://mf-static.meteofor.st/assets/bg-desktop/d_c3.jpg");
 }

@@ -1,5 +1,6 @@
 import PartlyCloudy from '../AnimatedIcon/PartlyCloudy/PartlyCloudy';
 import styles from './timeCardWeather.module.css'
+import Storm from '../AnimatedIcon/Storm/Storm';
 
 const TimeCardWeather = (props) => {
     const { temp_max, temp_min, feels_like } = props;
@@ -7,7 +8,10 @@ const TimeCardWeather = (props) => {
         <div className={styles['common__row']}>
             {/*  Now || 11am */}
             <h3 className={styles['time__title']}>11am </h3>
-            <PartlyCloudy />
+            {/* <Storm /> */}
+
+            <PartlyCloudy smallTopPadding />
+            
             <div className={styles['temp_max']}>
                 <p>{temp_max ? `${temp_max}°` : `30°`}</p>
                 <p>{temp_min ? `${temp_min}°` : `28°`}</p>
