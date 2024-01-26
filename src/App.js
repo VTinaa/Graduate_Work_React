@@ -4,6 +4,8 @@ import './App.css';
 import Header from './components/Header'
 import Footer from './components/Footer'
 import WeatherContainer from './components/WeatherContainer';
+import DailyForecast from './components/DailyForecast/DailyForecast';
+import ClimaticForecast from './components/ClimaticForecast/ClimaticForecast';
 
 import { 
   HOME_RATH,
@@ -30,6 +32,8 @@ function App() {
       <Header />
       <Routes>
         <Route path={HOME_RATH} element={<WeatherContainer />} />
+        <Route path={DAILY_RATH} element={<DailyForecast />} />
+        <Route path={HOURLY_RATH} element={<ClimaticForecast />} />
       </Routes>
       {/* <WeatherContainer /> */}
 

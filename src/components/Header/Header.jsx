@@ -1,4 +1,3 @@
-import Navigation from '../Navigation/Navigation';
 import PageWrapper from '../PageWrapper/PageWrapper';
 import styles from './header.module.css'
 // import img from '../../images/10844370.png'
@@ -17,7 +16,7 @@ const Header = () => {
                     <i class="fa-solid fa-cloud-moon"></i>
                     
                     <input type="text" placeholder="Enter City"/>
-                    <Navigation />
+                    
                 </header>
             </PageWrapper>
 

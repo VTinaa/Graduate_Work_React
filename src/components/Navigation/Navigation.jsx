@@ -8,15 +8,22 @@ import {
     HOURLY_RATH,
     DAILY_RATH
 } from "../../constants/pathNames"
+import PageWrapper from '../PageWrapper/PageWrapper';
 
 
-const Navigation = (props) => {
+const Navigation = () => {
    
     return (
-        <nav>
-            <Link to={HOURLY_RATH}> Daily Forecast 16 days </Link>
-            <Link to={DAILY_RATH}> Climatic Forecast 30 days </Link>
-        </nav>
+        <PageWrapper>
+            <nav className={styles['common']}>
+                <Link to={HOURLY_RATH}> 
+                    <div className={styles['link-hourly']}> Daily Forecast 16 days </div> 
+                </Link>
+                <Link to={DAILY_RATH}> 
+                    <div className={styles['link-daily']}> Climatic Forecast 30 days </div>
+                </Link>
+            </nav>
+        </PageWrapper>
     )
 }
 

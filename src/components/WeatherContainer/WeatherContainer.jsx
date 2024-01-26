@@ -3,6 +3,7 @@ import PageWrapper from '../PageWrapper/PageWrapper';
 import CardWeather from '../CardWeather';
 import TimeCardWeather from '../TimeCardWeather/TimeCardWeather';
 import InfoLineCard from '../InfoLineCard/InfoLineCard';
+import Navigation from '../Navigation/Navigation';
 
 import { useEffect, useState } from 'react';
 
@@ -13,6 +14,9 @@ const WeatherContainer = () => {
   const [ weatherData, setWeatherData ] = useState(null);
 
   // useEffect(() => {
+  //   const apiKey = '54d7ff260ae0839a16f55b92aaa0c556';
+  //   const lat = 44.34;
+  //   const lon = 10.99;
   //     fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=54d7ff260ae0839a16f55b92aaa0c556`)
   //         .then(response => response.json())
   //         .then(resp => console.log(resp))
@@ -79,6 +83,7 @@ const WeatherContainer = () => {
       <div className={styles['weathe-day']}>
 
       </div>
+      <Navigation />
     </PageWrapper>
   )
 }
