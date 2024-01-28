@@ -9,7 +9,7 @@ import ClimaticForecast from './components/ClimaticForecast/ClimaticForecast';
 
 import { 
   HOME_RATH,
-  HOURLY_RATH,
+  CLIMATIC_RATH,
   DAILY_RATH
  } from "./constants/pathNames"
 import { Route, Routes } from 'react-router';
@@ -33,7 +33,7 @@ function App() {
       <Routes>
         <Route path={HOME_RATH} element={<WeatherContainer />} />
         <Route path={DAILY_RATH} element={<DailyForecast />} />
-        <Route path={HOURLY_RATH} element={<ClimaticForecast />} />
+        <Route path={CLIMATIC_RATH} element={<ClimaticForecast />} />
       </Routes>
       {/* <WeatherContainer /> */}
 

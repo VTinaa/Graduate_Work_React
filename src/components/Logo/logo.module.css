@@ -1,0 +1,16 @@
+.logo-title {
+    font-family: 'Alleyn-BoldItalic';
+    font-size: 50px;
+    color: #fff;
+    margin: 0;
+    z-index: 11;
+    margin-left: 55px;
+}
+
+.fa-solid {
+    position: absolute;
+    color: rgba(57, 57, 57, 0.656);
+    font-size: 50px;
+    left: 102px;
+    /* top: 0; */
+}

@@ -1,4 +1,4 @@
-.partly_cloudy {
+.moon-partly_cloudy {
     /* position: relative;
     width: 5rem;
     height: 5rem; */
@@ -6,18 +6,18 @@
     height: 70px !important;
 }
 
-/* Сонце */
-.partly-cloudy-sun {
+/* Месяц */
+.partly-cloudy-moon {
     position: relative;
     width: 6rem;
     height: 6rem;
     z-index: 1;
      /*  */
-     top: 20px;
+    top: 20px;
 }
 /* timeCard */
 .small-padding {
-    top: 5px;
+    top: 0;
 }
 .small-width {
     width: 4rem;
@@ -25,10 +25,10 @@
 }
 /*  */
 
-.partly-cloudy-sun:before {
+.partly-cloudy-moon:before {
     box-shadow: none !important;
 }
-.partly-cloudy-sun:before {
+.partly-cloudy-moon:before {
     content: "";
     position: absolute;
     height: 80%;
@@ -37,19 +37,19 @@
     right: 10%;
     border-radius: 50%;
     z-index: 2;
-    background-color: #f1c40f;
-    background-image: radial-gradient(#f1c40f, #f39c12);
+    background-color: #f8f5b5;
+    background-image: radial-gradient(#ffffff, #fdf3bb);
     /* box-shadow: 0 0 25px #917508; */
 }
 
-.partly-cloudy-sun:after {
+.partly-cloudy-moon:after {
     content: "";
     position: absolute;
     height: 100%;
     width: 100%;
     border-radius: 50%;
     z-index: 1;
-    background-color: #f39c12;
+    background-color: #dbd1c1;
     will-change: opacity, transform;
     animation: fadeIn 2s linear infinite reverse, scaleDown 2s linear infinite reverse;
 }
@@ -63,7 +63,7 @@
  }
  @keyframes scaleDown {
      0% {
-      transform: scale(1);
+      transform: scale(0.9);
      }
      100% {
       transform: scale(0.8);
@@ -72,7 +72,7 @@
 
 
   /* Хмаринка */
-.partly-cloudy-cloud {
+.moon-partly-cloudy-cloud {
     position: relative;
     width: 4rem;
     height: 4rem;
@@ -85,7 +85,7 @@
 }
 /* timeCard */
 .small-top {
-    top: -40px;
+    top: -45px;
 }
 .small-width-cloud {
     width: 2.5rem;
@@ -102,7 +102,7 @@
     }
 }
 
-.partly-cloudy-cloud:before {
+.moon-partly-cloudy-cloud:before {
     content: "";
     position: absolute;
     height: 40%;
@@ -117,7 +117,7 @@
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
 }
 
-.partly-cloudy-cloud:after {
+.moon-partly-cloudy-cloud:after {
     content: "";
     position: absolute;
     height: 60%;

@@ -2,11 +2,19 @@
 .cloudy {
     position: relative;
     /*  */
-    top: 48px;
+    top: 25px;
     /*  */
-    width: 5rem;
-    height: 5rem
+    width: 6rem;
+    height: 6rem
     
+}
+.small-top{
+    /* top: 48px; */
+    
+}
+.small-width {
+    width: 4rem;
+    height: 4rem;
 }
 
 .cloudy:before {

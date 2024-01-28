@@ -8,7 +8,7 @@ const Footer = () => {
                 <footer className={styles['footer']}>
                     <p>2024</p>
                     {/* <i>GitHub</i> */}
-                    <i class="fa-brands fa-github"></i>
+                    <a href="https://github.com/VTinaa/Graduate_Work_React"><i class="fa-brands fa-github"></i></a>
                     <p>Graduate work</p>
                 </footer>
             </PageWrapper>

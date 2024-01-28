@@ -1,3 +1,3 @@
 export const HOME_RATH = "/";
-export const HOURLY_RATH = "/dailyForecast16";
-export const DAILY_RATH = "/climaticForecast30";
+export const DAILY_RATH = "/dailyForecast16";
+export const CLIMATIC_RATH = "/climaticForecast30";

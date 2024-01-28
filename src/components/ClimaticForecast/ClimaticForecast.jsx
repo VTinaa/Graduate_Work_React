@@ -1,8 +1,14 @@
 import styles from './climaticForecast.module.css'
 
+import PageWrapper from '../PageWrapper/PageWrapper';
+
 const ClimaticForecast = () => {
     return (
-        <div className={styles['common']}>Climatic Forecast 30 days</div>
+        <PageWrapper>
+
+            <div className={styles['common']}>Climatic Forecast 30 days</div>
+            
+        </PageWrapper>
     )
 }
 

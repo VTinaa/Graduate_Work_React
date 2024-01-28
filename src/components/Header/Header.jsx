@@ -1,6 +1,7 @@
 import PageWrapper from '../PageWrapper/PageWrapper';
 import styles from './header.module.css'
 // import img from '../../images/10844370.png'
+import Logo from '../Logo/Logo'
 
 
 const Header = () => {
@@ -8,12 +9,10 @@ const Header = () => {
         <div className={styles['common']}>
             <PageWrapper>
                 <header className={styles['header']}>
-                    <h1>SkyView
-                    {/* <img src={img} alt="" /> */}
-                    {/* <i class="fa-brands fa-cloudversify"></i> */}
-                    {/* <i class="fa-brands fa-skyatlas"></i> */}
-                    </h1>
-                    <i class="fa-solid fa-cloud-moon"></i>
+                    {/* <h1>SkyView</h1> */}
+                    <Logo />
+
+                    {/* <i class="fa-solid fa-cloud-moon"></i> */}
                     
                     <input type="text" placeholder="Enter City"/>
                     

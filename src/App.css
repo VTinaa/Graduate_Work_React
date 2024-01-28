@@ -82,3 +82,24 @@
 .sun-bg {
   background-image: url("https://mf-static.meteofor.st/assets/bg-desktop/d_c3.jpg");
 }
+.cloud-bg {
+  /* background-color: #192f35; */
+
+  /* background-image: url("https://images.wallpapershq.com/wallpapers/8170/wallpaper_8170_1920x1080.jpg"); */
+  /* background-image: url("https://grandgames.net/puzzle/f1200/lug_i_pasmurnoe_nebo.jpg"); */
+
+  /* background-image: url("https://images.wallpapershq.com/wallpapers/1059/wallpaper_1059_1920x1080.jpg"); */
+
+  /* background-image: url("https://images.wallpapershq.com/wallpapers/7556/wallpaper_7556_1920x1080.jpg"); */
+  /* background-image: url("https://images.wallpapershq.com/wallpapers/5974/wallpaper_5974_1920x1080.jpg"); */
+  background-image: url("https://images.wallpapershq.com/wallpapers/609/wallpaper_609_1920x1080.jpg");
+
+  /* background-image: url("https://img.freepik.com/free-photo/high-angle-shot-of-mountains-in-the-mist_181624-15160.jpg?w=1060&t=st=1706456352~exp=1706456952~hmac=82c6b145a3ffd04de1726f95137df297927e304d91021a68fcde73bbbb123927"); */
+
+  /* background-image: url("https://img.freepik.com/free-vector/beautiful-gradient-mountains-landscape_23-2148261004.jpg?w=1060&t=st=1706456574~exp=1706457174~hmac=7d03950557acbd5b6f1ff46f2e7b12ae81c43b9f7108781eb5d5cf15f9212385"); */
+  /* background-image: url("https://img.freepik.com/free-vector/sunset-in-mountains-with-starry-night_23-2148264497.jpg?w=1060&t=st=1706456735~exp=1706457335~hmac=ed8b83cb8fcfb1ee2d1f5a20ce494b7ade9ca10bd8377415b5c81b87a20ed2a6"); */
+  /* background-image: url("https://img.freepik.com/free-photo/majestic-mountain-range-at-dusk-tranquil-scene-generated-by-ai_188544-33352.jpg?w=1380&t=st=1706456790~exp=1706457390~hmac=765e158b9b7753f79fa5e58c1714f01048d38faadf016cfed33bcadb3be808c9"); */
+  /* background-image: url("https://img.freepik.com/free-photo/beautiful-sunset-in-the-mountains-landscape-with-sun-light-shining-through-orange-clouds-and-fog_146671-18476.jpg?w=1060&t=st=1706456335~exp=1706456935~hmac=6381b4fc5084574c6950dc820701d73155ba337e19c807bc7eb1c75ca90c5b07"); */
+
+
+}
