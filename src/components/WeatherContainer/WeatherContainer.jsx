@@ -5,54 +5,56 @@ import CardWeather from '../CardWeather';
 import TimeCardWeather from '../TimeCardWeather/TimeCardWeather';
 import InfoLineCard from '../InfoLineCard/InfoLineCard';
 import Navigation from '../Navigation/Navigation';
+import CoordinatesContext from '../../Contexts';
 
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 import styles from './weatherContainer.module.css'
 
 const WeatherContainer = () => {
+  const coordinates = useContext(CoordinatesContext);
 
-  const [ weatherData, setWeatherData ] = useState(null);
-  const [ fetching, setFetching ] = useState(false);
+  const [currentWeatherData, setCurrentWeatherData] = useState(null);
+  const [futureWeatherData, setFutureWeatherData] = useState(null);
+  const [fetching, setFetching] = useState(false);
   const [fetchError, setFetchError] = useState(null);
 
+  // Визначає поточну погоду
   useEffect(() => {
     const apiKey = '54d7ff260ae0839a16f55b92aaa0c556';
-    const lat = 44.34;
-    const lon = 10.99;
     setFetching(true);
-      fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=54d7ff260ae0839a16f55b92aaa0c556`)
-          .then(response => response.json())
-          .then(resp => {
-            setWeatherData(resp)
-            setFetching(false)
-          })
-          .catch (error => {
-              // console.error('Error fetching weather data:', error);
-              setFetching(false)
-              // setFetchError(err)
-            })
-  },[]);
 
-  // useEffect(() => {
-  //   const apiKey = '54d7ff260ae0839a16f55b92aaa0c556';
-  //   const lat = 44.34;
-  //   const lon = 10.99;
-  //   // const lat = 'San';
-  //   // const lon = 'Francisco';
-  //   // Функция для получения данных с API
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`);
-  //       const data = await response.json();
-  //       setWeatherData(data);
-  //     } catch (error) {
-  //       console.error('Error fetching weather data:', error);
-  //     }
-  //   };
+    const fetchCurrentWeatherData = async () => {
+      try {
+        const url = `https://api.openweathermap.org/data/2.5/weather?lat=${coordinates.lat}&lon=${coordinates.lon}&units=metric&appid=${apiKey}`;
+        const response = await fetch(url);
+        const data = await response.json();
 
-  //   fetchData(); // Вызов функции при монтировании компонента
-  // }, []);
+        setCurrentWeatherData(data);
+        setFetching(false);
+      } catch (error) {
+        setFetchError(error);
+      }
+    };
+
+    const fetchFutureWeatherData = async () => {
+      try {
+        const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&units=metric&appid=${apiKey}`;
+        const response = await fetch(url);
+        const data = await response.json();
+
+        setFutureWeatherData(data);
+        // setFetching(false);
+      } catch (error) {
+        setFetchError(error);
+      }
+    };
+
+    fetchCurrentWeatherData();
+    fetchFutureWeatherData();
+
+    setFetching(false);
+  }, [coordinates]);
 
   return (
     // <div className={styles['common']}>Basic Category</div>
@@ -60,14 +62,15 @@ const WeatherContainer = () => {
       <QueryLoader fetching={fetching} error={fetchError}>
         <div className={styles['container__flex']}>
           <div className={styles['common']}>
-            {weatherData && (
+            {currentWeatherData && (
               <CardWeather
-                coord={ weatherData.coord }
-                temp={ weatherData.main.temp }
-                main={ weatherData.weather[0].main }
-                humidity={ weatherData.main.humidity }
-                description={ weatherData.weather[0].description }
-                icon={weatherData.weather[0].main}
+                cityName={currentWeatherData.name}
+                weather={ currentWeatherData.weather[0].id }
+                temp={ `${Math.round(currentWeatherData.main.temp)}°` }
+                main={ currentWeatherData.weather[0].main }
+                humidity={ currentWeatherData.main.humidity }
+                description={ currentWeatherData.weather[0].description }
+                icon={currentWeatherData.weather[0].main}
               />
             )}
           </div>
@@ -80,13 +83,13 @@ const WeatherContainer = () => {
           </div>
         </div>
         <div>
-          {weatherData && (
+          {currentWeatherData && (
             <InfoLineCard
-              speed={ weatherData.wind.speed }
-              pressure={ weatherData.main.pressure }
-              humidity={ weatherData.main.humidity }
-              sunrise={ weatherData.sys.sunrise }
-              sunset={ weatherData.sys.sunset }
+              speed={ currentWeatherData.wind.speed }
+              pressure={ currentWeatherData.main.pressure }
+              humidity={ currentWeatherData.main.humidity }
+              sunrise={ currentWeatherData.sys.sunrise }
+              sunset={ currentWeatherData.sys.sunset }
             />
           )}
         </div>

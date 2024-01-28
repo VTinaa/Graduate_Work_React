@@ -2,12 +2,19 @@ import styles from './infoLineCard.module.css'
 
 const InfoLineCard = (props) => {
     const { speed, pressure, humidity, sunrise, sunset }= props;
+
+    const convertSecondsToTime = (seconds) => {
+        var date = new Date(0);
+        date.setUTCSeconds(seconds);
+
+        return date.getHours().toString();
+    }
+
     return(
         <div className={styles['common']}>
             <div> 
                 <i class="fa-solid fa-wind"></i>
                 <h5>Wind</h5>
-                {/* { speed ? `${speed}` : "m/s" }  */}
                 { speed }m/s
             </div>
             <div>
@@ -24,13 +31,13 @@ const InfoLineCard = (props) => {
             <i class="fa-solid fa-arrow-up"></i>
             <i class="fa-solid fa-sun"></i>
                 <h5>Sunrise</h5>
-                { sunrise } AM
+                { convertSecondsToTime(sunrise) } AM
             </div>
             <div>
             <i class="fa-solid fa-arrow-down"></i>
             <i class="fa-solid fa-sun"></i>
                 <h5>Sunset</h5>
-                { sunset } PM
+                { convertSecondsToTime(sunset) } PM
             </div>
         </div>
     )

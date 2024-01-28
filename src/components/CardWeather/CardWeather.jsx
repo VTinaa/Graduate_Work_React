@@ -13,32 +13,33 @@ import SunRain from '../AnimatedIcon/SunRain/SunRain';
 //
 
 const CardWeather = (props) => {
-    const { coord, temp, main, description, humidity, icon } = props;
+    const { cityName, weather, temp, main, description, humidity } = props;
+
+    const getWeatherIcon = () => {
+        if (weather >= 200 && weather <= 232) {
+            return <Storm />
+        } else if (weather > 232 && weather < 800) {
+            return <Rain />
+        } else if (weather == 800) {
+            return <Sun />
+        } else if (weather > 800 && weather < 803) {
+            return <PartlyCloudy />
+        } else if (weather == 803 || weather == 804) {
+            return <Clouds />
+        } else {
+            return <SunRain />
+        }
+    }
+
     return (
         <div className={styles['common']}>
-            {/* <h2>{ coord.lon || `City`}</h2> */}
-            {/* <h2 className={styles['title']}>{coord ? `${coord.lon}, ${coord.lat}` : 'City'}</h2> */}
-            <h2 className={styles['title']}>San Francisco</h2>
+            <h2 className={styles['title']}>{cityName}</h2>
             <p className={styles['time-day-month']}>time/day. Month</p>
 
             <div className={styles['container__weather']}>
                 <div className={styles['title-temp']}>
-                    {/* <p>{ temp || `+8°` }</p> */}
-                    {/* <div><Sun /></div> */}
-                    {/* <div><Storm /></div> */}
-                    {/* <Rain /> */}
-                    {/* <MoonRain /> */}
-                    {/* <SunRain /> */}
-                    {/* <Clouds /> */}
-
-                    {/* <Moon /> */}
-                    {/* <MoonPartyCloudy /> */}
-
-                    {/* { icon === 'Clouds' && <PartlyCloudy /> } */}
-                    {<PartlyCloudy />}
-                    {/* <p>{temp ? `${temp}°C` : '+8°'}</p> */}
-                    <p className={styles['p-temp']}>{'24°'}</p>
-
+                    {getWeatherIcon()}
+                    <p className={styles['p-temp']}>{temp}</p>
                 </div>
                 <div>
                     <p className={styles['title-main']}> {main} </p>
