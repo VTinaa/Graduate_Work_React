@@ -13,7 +13,7 @@ import SunRain from '../AnimatedIcon/SunRain/SunRain';
 //
 
 const CardWeather = (props) => {
-    const { cityName, weather, temp, main, description, humidity } = props;
+    const { cityName, weather, temp, main, description, cloudiness } = props;
 
     const getWeatherIcon = () => {
         if (weather >= 200 && weather <= 232) {
@@ -30,11 +30,18 @@ const CardWeather = (props) => {
             return <SunRain />
         }
     }
+    const getCurrentDate = () => {
+        const today = new Date();
+        const dd = String(today.getDate()).padStart(2, '0');
+        const mm = String(today.getMonth() + 1).padStart(2, '0');
+        const yyyy = today.getFullYear();
 
+        return mm + '/' + dd + '/' + yyyy;;
+    }
     return (
         <div className={styles['common']}>
             <h2 className={styles['title']}>{cityName}</h2>
-            <p className={styles['time-day-month']}>time/day. Month</p>
+            <p className={styles['time-day-month']}>{ getCurrentDate() }</p>
 
             <div className={styles['container__weather']}>
                 <div className={styles['title-temp']}>
@@ -43,7 +50,8 @@ const CardWeather = (props) => {
                 </div>
                 <div>
                     <p className={styles['title-main']}> {main} </p>
-                    <p className={styles['title-humiditi']}>{humidity} %</p>
+                    <p className={styles['title-humiditi']}><i class="fa-solid fa-cloud"></i> {cloudiness} %</p>
+                    
                     <p className={styles['title-desc']}> {description} </p>
 
                 </div>

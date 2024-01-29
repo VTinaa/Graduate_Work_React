@@ -68,9 +68,9 @@ const WeatherContainer = () => {
                 weather={ currentWeatherData.weather[0].id }
                 temp={ `${Math.round(currentWeatherData.main.temp)}°` }
                 main={ currentWeatherData.weather[0].main }
-                humidity={ currentWeatherData.main.humidity }
+                cloudiness={ currentWeatherData.clouds.all }
                 description={ currentWeatherData.weather[0].description }
-                icon={currentWeatherData.weather[0].main}
+                // icon={currentWeatherData.weather[0].main}
               />
             )}
           </div>
