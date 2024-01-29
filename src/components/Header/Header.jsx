@@ -14,7 +14,8 @@ const Header = ({ setCoordinates }) => {
         try {
             const response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${searchString}&limit=1&appid=${apiKey}`);
             const data = await response.json();
-            setCoordinates({ lat: data[0].lat, lon: data[0].lon })
+            setCoordinates({ lat: data[0].lat, lon: data[0].lon });
+            setSearchString('');
         } catch (error) {
             console.error('Error fetching weather data:', error);
         }

@@ -31,7 +31,7 @@ const TimeCardWeather = (props) => {
     }
 
     return(
-        <div className={styles['common__row']}>
+        <div className={styles['common__row']} onClick={onShow}>
             {/*  Now || 11am */}
             <h3 className={styles['time__title']}>{date}</h3>
             {/* <Sun /> */}
@@ -52,7 +52,7 @@ const TimeCardWeather = (props) => {
                 <h3>Cloudiness</h3><i class="fa-solid fa-cloud"></i> {cloudiness}
             </p>
 
-            <Modal showModal={showModal} openModalFunc={setShowModal}>
+            <Modal showModal={showModal} openModalFunc={setShowModal} onClose={onClose}>
                 {modalContent}
             </Modal>
 
