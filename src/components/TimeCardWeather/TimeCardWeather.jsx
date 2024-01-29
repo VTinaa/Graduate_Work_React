@@ -32,7 +32,7 @@ const TimeCardWeather = (props) => {
 
     const { temp_max, temp_min, feels_like } = props;
     return(
-        <div className={styles['common__row']}>
+        <div className={styles['common__row']} onClick={onShow}>
             {/*  Now || 11am */}
             <h3 className={styles['time__title']}>11am </h3>
             {/* <Sun /> */}
@@ -54,7 +54,7 @@ const TimeCardWeather = (props) => {
                 {feels_like ? `${feels_like}°` : `25°`}
             </p>
 
-            <Modal showModal={showModal} openModalFunc={setShowModal}>
+            <Modal showModal={showModal} openModalFunc={setShowModal} onClose={onClose}>
                 {modalContent}
             </Modal>
 
