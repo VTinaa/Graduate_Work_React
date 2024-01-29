@@ -31,7 +31,6 @@ const WeatherContainer = () => {
         const data = await response.json();
 
         setCurrentWeatherData(data);
-        setFetching(false);
       } catch (error) {
         setFetchError(error);
       }
@@ -43,8 +42,8 @@ const WeatherContainer = () => {
         const response = await fetch(url);
         const data = await response.json();
 
-        setFutureWeatherData(data);
-        // setFetching(false);
+        const fileteredData = filterFutureDaysData(data.list);
+        setFutureWeatherData(fileteredData);
       } catch (error) {
         setFetchError(error);
       }
@@ -55,6 +54,55 @@ const WeatherContainer = () => {
 
     setFetching(false);
   }, [coordinates]);
+
+  const filterFutureDaysData = (list) => {
+    const todayDate = new Date();
+    const todayDay = String(todayDate.getDate()).padStart(2, '0');
+    let days = [];
+    let futureDaysWeatherData = [];
+
+    const filteredDaysWeatherData = list.filter((info) => {
+      let currentDate = new Date(info.dt_txt);
+      const currentDay = String(currentDate.getDate()).padStart(2, '0');
+
+      if (todayDay != currentDay) {
+        days.push(currentDay);
+        info.currentDay = currentDay;
+        return info;
+      }
+    });
+    
+    days = [... new Set(days)];
+    days.forEach(element => {
+      const allWeatherDataByDay = filteredDaysWeatherData.filter(x => x.currentDay == element);
+
+      let maxTempDataByDay = allWeatherDataByDay.reduce((maxTemp, currentTemp) => {
+        return currentTemp.main.temp_max > maxTemp.main.temp_max ? currentTemp : maxTemp;
+      }, allWeatherDataByDay[0]);
+
+      let minTempDataByDay = allWeatherDataByDay.reduce((minTemp, currentTemp) => {
+        return currentTemp.main.temp_min < minTemp.main.temp_min ? currentTemp : minTemp;
+      }, allWeatherDataByDay[0]);
+      
+      const currentWeatherData = filteredDaysWeatherData.find((x) => x.currentDay == element);
+
+      futureDaysWeatherData.push({
+        dt_txt: currentWeatherData.dt_txt,
+        temp_min: minTempDataByDay.main.temp_min,
+        temp_max: maxTempDataByDay.main.temp_max,
+        cloudiness: Math.round((minTempDataByDay.clouds.all + maxTempDataByDay.clouds.all) / 2),
+      });
+    });
+
+    return futureDaysWeatherData;
+  };
+
+  const preapereDate = (date) => {
+    const weekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    const currentDateObject = new Date(date);
+    
+    return weekdays[currentDateObject.getDay()];
+  };
 
   return (
     // <div className={styles['common']}>Basic Category</div>
@@ -76,10 +124,31 @@ const WeatherContainer = () => {
           </div>
 
           <div className={styles['time__card']}>
-            <TimeCardWeather />
-            <TimeCardWeather />
-            <TimeCardWeather />
-            <TimeCardWeather />
+            {
+              futureWeatherData && 
+              <>
+                <TimeCardWeather 
+                  date={preapereDate(futureWeatherData[0].dt_txt)} 
+                  minTemp={ `${Math.round(futureWeatherData[0].temp_min)}°`} 
+                  maxTemp={`${Math.round(futureWeatherData[0].temp_max)}°`} 
+                  cloudiness={`${Math.round(futureWeatherData[0].cloudiness)}%`}/> 
+                <TimeCardWeather 
+                  date={preapereDate(futureWeatherData[1].dt_txt)} 
+                  minTemp={ `${Math.round(futureWeatherData[1].temp_min)}°`} 
+                  maxTemp={`${Math.round(futureWeatherData[1].temp_max)}°`} 
+                  cloudiness={`${Math.round(futureWeatherData[1].cloudiness)}%`}/>
+                <TimeCardWeather 
+                  date={preapereDate(futureWeatherData[2].dt_txt)} 
+                  minTemp={`${Math.round(futureWeatherData[2].temp_min)}°`} 
+                  maxTemp={`${Math.round(futureWeatherData[2].temp_max)}°`} 
+                  cloudiness={`${Math.round(futureWeatherData[2].cloudiness)}%`}/>
+                <TimeCardWeather 
+                  date={preapereDate(futureWeatherData[3].dt_txt)} 
+                  minTemp={ `${Math.round(futureWeatherData[3].temp_min)}°`} 
+                  maxTemp={`${Math.round(futureWeatherData[3].temp_max)}°`} 
+                  cloudiness={`${Math.round(futureWeatherData[3].cloudiness)}%`}/>
+              </>
+            }
           </div>
         </div>
         <div>

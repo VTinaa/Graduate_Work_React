@@ -19,7 +19,7 @@ let modalContent = (
 )
 
 const TimeCardWeather = (props) => {
-
+    const { date, minTemp, maxTemp, cloudiness, modalContent } = props;
     const [ showModal, setShowModal ] = useState(false);
 
     const onClose = () => {
@@ -30,11 +30,10 @@ const TimeCardWeather = (props) => {
         setShowModal(true)
     }
 
-    const { temp_max, temp_min, feels_like } = props;
     return(
         <div className={styles['common__row']}>
             {/*  Now || 11am */}
-            <h3 className={styles['time__title']}>11am </h3>
+            <h3 className={styles['time__title']}>{date}</h3>
             {/* <Sun /> */}
             {/* <Storm /> */}
             {/* <Clouds topPosition /> */}
@@ -46,12 +45,11 @@ const TimeCardWeather = (props) => {
             {/* <MoonPartyCloudy smallTopPadding/> */}
             
             <div className={styles['temp_max']}>
-                <p>{temp_max ? `${temp_max}°` : `30°`}</p>
-                <p>{temp_min ? `${temp_min}°` : `28°`}</p>
+                <p>{minTemp}</p>
+                <p>{maxTemp}</p>
             </div>
             <p className={styles['real-fell__center']}>
-                <h3>Real Fell</h3>
-                {feels_like ? `${feels_like}°` : `25°`}
+                <h3>Cloudiness</h3><i class="fa-solid fa-cloud"></i> {cloudiness}
             </p>
 
             <Modal showModal={showModal} openModalFunc={setShowModal}>
