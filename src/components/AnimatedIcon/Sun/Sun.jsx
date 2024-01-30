@@ -13,7 +13,7 @@ const Sun = (topPosition) => {
     );
     // использовать sunClassName
     return (
-        <div className={styles['sunny']}></div>
+        <div className={sunClassName}></div>
     )
 }
 

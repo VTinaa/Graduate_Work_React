@@ -5,6 +5,12 @@
      /*  */
      top: 25px;
 }
+/* timeCard */
+.small-top {
+    top: -14px;
+    right: -8px;
+}
+/*  */
 
 .rainy-cloud {
     position: absolute;
@@ -12,6 +18,15 @@
     width: 100%;
     z-index: 2;
 }
+/* timeCard */
+.small-width {
+    width: 4rem;
+    height: 4rem;
+}
+.small-padding {
+    top: 20px;
+}
+/*  */
 .rainy-cloud:before {
     background-color: #95a5a6;
     background-image: radial-gradient(#95a5a6, #7f8c8d);
@@ -56,6 +71,16 @@
     z-index: 1;
     overflow: hidden;
 }
+/* timeCard */
+.small-width-rain {
+    width: 4rem;
+    height: 4rem;
+}
+.small-padding {
+    top: 20px;
+}
+/*  */
+
 
 .rainy-rain:before {
     content: "";

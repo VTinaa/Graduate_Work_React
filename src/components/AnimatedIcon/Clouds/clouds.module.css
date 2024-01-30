@@ -8,14 +8,15 @@
     height: 6rem
     
 }
+/* timeCard */
 .small-top{
-    /* top: 48px; */
-    
+    top: 13px;
 }
 .small-width {
     width: 4rem;
     height: 4rem;
 }
+/*  */
 
 .cloudy:before {
     content: "";

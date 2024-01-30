@@ -13,7 +13,11 @@
 .small-top {
     top: 0;
 }
-
+.small-width {
+    width: 4rem;
+    height: 4rem;
+}
+/*  */
 .sunny:before {
     content: "";
     position: absolute;

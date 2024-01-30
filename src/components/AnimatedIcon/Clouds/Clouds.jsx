@@ -13,7 +13,7 @@ const Clouds = ({ topPosition }) => {
     )
 // использовать cloudsClassName
     return (
-        <div className={styles['cloudy']}></div>
+        <div className={cloudsClassName}></div>
     )
 }
 

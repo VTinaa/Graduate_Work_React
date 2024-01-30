@@ -19,8 +19,8 @@ import { useState } from 'react';
 
 const getCurrentWeatherType = () => {
   const currentHour = new Date().getHours();
-  return currentHour >= 0 && currentHour < 12 ? 'day' : 'nigth';
-  // return currentHour >= 0 && currentHour < 12 ? 'nigth' : 'day';
+  // return currentHour >= 0 && currentHour < 12 ? 'day' : 'nigth';
+  return currentHour >= 0 && currentHour < 12 ? 'nigth' : 'day';
 };
 // 51.5073219
 // -0.1276474

@@ -90,6 +90,7 @@ const WeatherContainer = () => {
         dt_txt: currentWeatherData.dt_txt,
         temp_min: minTempDataByDay.main.temp_min,
         temp_max: maxTempDataByDay.main.temp_max,
+        weather: currentWeatherData.weather[0].id,
         cloudiness: Math.round((minTempDataByDay.clouds.all + maxTempDataByDay.clouds.all) / 2),
       });
     });
@@ -129,21 +130,25 @@ const WeatherContainer = () => {
               <>
                 <TimeCardWeather 
                   date={preapereDate(futureWeatherData[0].dt_txt)} 
+                  weather={futureWeatherData[0].weather}
                   minTemp={ `${Math.round(futureWeatherData[0].temp_min)}°`} 
                   maxTemp={`${Math.round(futureWeatherData[0].temp_max)}°`} 
                   cloudiness={`${Math.round(futureWeatherData[0].cloudiness)}%`}/> 
                 <TimeCardWeather 
-                  date={preapereDate(futureWeatherData[1].dt_txt)} 
+                  date={preapereDate(futureWeatherData[1].dt_txt)}
+                  weather={futureWeatherData[1].weather} 
                   minTemp={ `${Math.round(futureWeatherData[1].temp_min)}°`} 
                   maxTemp={`${Math.round(futureWeatherData[1].temp_max)}°`} 
                   cloudiness={`${Math.round(futureWeatherData[1].cloudiness)}%`}/>
                 <TimeCardWeather 
-                  date={preapereDate(futureWeatherData[2].dt_txt)} 
+                  date={preapereDate(futureWeatherData[2].dt_txt)}
+                  weather={futureWeatherData[2].weather} 
                   minTemp={`${Math.round(futureWeatherData[2].temp_min)}°`} 
                   maxTemp={`${Math.round(futureWeatherData[2].temp_max)}°`} 
                   cloudiness={`${Math.round(futureWeatherData[2].cloudiness)}%`}/>
                 <TimeCardWeather 
-                  date={preapereDate(futureWeatherData[3].dt_txt)} 
+                  date={preapereDate(futureWeatherData[3].dt_txt)}
+                  weather={futureWeatherData[3].weather} 
                   minTemp={ `${Math.round(futureWeatherData[3].temp_min)}°`} 
                   maxTemp={`${Math.round(futureWeatherData[3].temp_max)}°`} 
                   cloudiness={`${Math.round(futureWeatherData[3].cloudiness)}%`}/>
