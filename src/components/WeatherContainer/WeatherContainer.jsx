@@ -54,6 +54,7 @@ const WeatherContainer = () => {
 
     setFetching(false);
   }, [coordinates]);
+  // console.log(coordinates);
 
   const filterFutureDaysData = (list) => {
     const todayDate = new Date();

@@ -45,6 +45,39 @@ const TimeCardWeather = (props) => {
         }
     }
 
+    const getStaticIcon = () => {
+
+        if (weather >= 200 && weather <= 232) {
+            return <i class="fa-solid fa-cloud-showers-heavy"></i> 
+        } else if (weather > 232 && weather < 800) {
+            return <i class="fa-solid fa-cloud-rain"></i>
+        } else if (weather == 800) {
+            return <i class="fa-solid fa-sun"></i>
+        } else if (weather > 800 && weather < 803) {
+            return <i class="fa-solid fa-cloud-sun"></i>
+        } else if (weather == 803 || weather == 804) {
+            return <i class="fa-solid fa-cloud"></i>
+        } else {
+            return <i class="fa-solid fa-cloud-sun-rain"></i>
+        }
+    }
+
+    const getWeatherType = () => {
+        if (weather >= 200 && weather <= 232) {
+            return "bgc-storm"
+        } else if (weather > 232 && weather < 800) {
+            return "bgc-rain"
+        } else if (weather == 800) {
+            return "bgc-clear"
+        } else if (weather > 800 && weather < 803) {
+            return "bgc-partly-cloudy"
+        } else if (weather == 803 || weather == 804) {
+            return "bgc-cloud"
+        } else {
+            return ""
+        }
+    }
+
     return(
         <div className={styles['common__row']} onClick={onShow}>
             {/*  Now || 11am */}
@@ -70,14 +103,15 @@ const TimeCardWeather = (props) => {
             </p>
 
             <Modal showModal={showModal} openModalFunc={setShowModal} onClose={onClose}>
-                <div className={styles['detail-card']}>
+                <div className={`${styles['detail-card']} ${getWeatherType()}`}>
                     <div className={styles['detail-flex']}>
                         <p>temp morning </p>
                         <p>temp daytime</p>
                         <p>temp evening</p>
                     </div>
                     <p>air humidity %</p>
-                    <p>weather : rain/ sun</p>
+                    { getStaticIcon() }
+                    <p>weather : rain/ sun{weather}</p>
                 </div>
             </Modal>
 
