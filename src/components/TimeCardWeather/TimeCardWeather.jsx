@@ -13,10 +13,8 @@ import Modal from '../Modal/Modal';
 
 import { useState } from 'react';
 
-
-
 const TimeCardWeather = (props) => {
-    const { date, minTemp, maxTemp, cloudiness, weather } = props;
+    const { date, minTemp, maxTemp, cloudiness, weather, detailedTempData } = props;
     const [ showModal, setShowModal ] = useState(false);
 
     const onClose = () => {
@@ -27,9 +25,7 @@ const TimeCardWeather = (props) => {
         setShowModal(true)
     }
 
-
     const getWeatherIcon = () => {
-
         if (weather >= 200 && weather <= 232) {
             return <Storm stormTopPosition /> 
         } else if (weather > 232 && weather < 800) {
@@ -82,18 +78,9 @@ const TimeCardWeather = (props) => {
         <div className={styles['common__row']} onClick={onShow}>
             {/*  Now || 11am */}
             <h3 className={styles['time__title']}>{date}</h3>
-            { getWeatherIcon() }
-            {/* <Sun /> */}
-            {/* <Storm stormTopPosition /> */}
-            {/* <Storm /> */}
-            {/* <Clouds topPosition /> */}
-
-            {/* <MoonRain smallTopPadding />*/}
-            {/* <SunRain smallTopPadding /> */}
-            
-            {/* <PartlyCloudy smallTopPadding /> */}
-            {/* <MoonPartyCloudy smallTopPadding/> */}
-            
+            { 
+                getWeatherIcon() 
+            }
             <div className={styles['temp_max']}>
                 <p>{minTemp}</p>
                 <p>{maxTemp}</p>
@@ -103,15 +90,17 @@ const TimeCardWeather = (props) => {
             </p>
 
             <Modal showModal={showModal} openModalFunc={setShowModal} onClose={onClose}>
-                <div className={`${styles['detail-card']} ${getWeatherType()}`}>
+                <div className={`${styles['detail-card']} ${styles[getWeatherType()]}`}>
                     <div className={styles['detail-flex']}>
-                        <p>temp morning </p>
-                        <p>temp daytime</p>
-                        <p>temp evening</p>
+                        <p>{`${Math.round(detailedTempData.temp_morning)}°`}</p>
+                        <p>{`${Math.round(detailedTempData.temp_day)}°`}</p>
+                        <p>{`${Math.round(detailedTempData.temp_evening)}°`}</p>
                     </div>
-                    <p>air humidity %</p>
-                    { getStaticIcon() }
-                    <p>weather : rain/ sun{weather}</p>
+                    <p>air humidity {Math.round(detailedTempData.humidity)}%</p>
+                    { 
+                        getStaticIcon(weather) 
+                    }
+                    <p>weather: </p>
                 </div>
             </Modal>
 

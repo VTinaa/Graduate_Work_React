@@ -54,7 +54,6 @@ const WeatherContainer = () => {
 
     setFetching(false);
   }, [coordinates]);
-  // console.log(coordinates);
 
   const filterFutureDaysData = (list) => {
     const todayDate = new Date();
@@ -74,8 +73,17 @@ const WeatherContainer = () => {
     });
     
     days = [... new Set(days)];
+    const times = ['09:00:00', '15:00:00', '21:00:00'];
+
     days.forEach(element => {
       const allWeatherDataByDay = filteredDaysWeatherData.filter(x => x.currentDay == element);
+
+      const detailedDataByDay = allWeatherDataByDay.filter(data => {
+        const hours = data.dt_txt.split(' ')[1];
+        if (times.includes(hours)){
+          return data;
+        }
+      });
 
       let maxTempDataByDay = allWeatherDataByDay.reduce((maxTemp, currentTemp) => {
         return currentTemp.main.temp_max > maxTemp.main.temp_max ? currentTemp : maxTemp;
@@ -93,6 +101,14 @@ const WeatherContainer = () => {
         temp_max: maxTempDataByDay.main.temp_max,
         weather: currentWeatherData.weather[0].id,
         cloudiness: Math.round((minTempDataByDay.clouds.all + maxTempDataByDay.clouds.all) / 2),
+        detailedTempData: {
+          temp_morning: detailedDataByDay.length == 3 ? detailedDataByDay[0].main.temp : Math.random(3),
+          temp_day: detailedDataByDay.length == 3 ? detailedDataByDay[1].main.temp : Math.random(3),
+          temp_evening: detailedDataByDay.length == 3 ? detailedDataByDay[2].main.temp : Math.random(3),
+          humidity: detailedDataByDay.length == 3 ? 
+            (detailedDataByDay[0].main.humidity + detailedDataByDay[1].main.humidity + detailedDataByDay[2].main.humidity) / 3 :
+            Math.random(100)
+        }
       });
     });
 
@@ -134,24 +150,28 @@ const WeatherContainer = () => {
                   weather={futureWeatherData[0].weather}
                   minTemp={ `${Math.round(futureWeatherData[0].temp_min)}°`} 
                   maxTemp={`${Math.round(futureWeatherData[0].temp_max)}°`} 
+                  detailedTempData={futureWeatherData[0].detailedTempData}
                   cloudiness={`${Math.round(futureWeatherData[0].cloudiness)}%`}/> 
                 <TimeCardWeather 
                   date={preapereDate(futureWeatherData[1].dt_txt)}
                   weather={futureWeatherData[1].weather} 
                   minTemp={ `${Math.round(futureWeatherData[1].temp_min)}°`} 
                   maxTemp={`${Math.round(futureWeatherData[1].temp_max)}°`} 
+                  detailedTempData={futureWeatherData[1].detailedTempData}
                   cloudiness={`${Math.round(futureWeatherData[1].cloudiness)}%`}/>
                 <TimeCardWeather 
                   date={preapereDate(futureWeatherData[2].dt_txt)}
                   weather={futureWeatherData[2].weather} 
                   minTemp={`${Math.round(futureWeatherData[2].temp_min)}°`} 
                   maxTemp={`${Math.round(futureWeatherData[2].temp_max)}°`} 
+                  detailedTempData={futureWeatherData[2].detailedTempData}
                   cloudiness={`${Math.round(futureWeatherData[2].cloudiness)}%`}/>
                 <TimeCardWeather 
                   date={preapereDate(futureWeatherData[3].dt_txt)}
                   weather={futureWeatherData[3].weather} 
                   minTemp={ `${Math.round(futureWeatherData[3].temp_min)}°`} 
                   maxTemp={`${Math.round(futureWeatherData[3].temp_max)}°`} 
+                  detailedTempData={futureWeatherData[3].detailedTempData}
                   cloudiness={`${Math.round(futureWeatherData[3].cloudiness)}%`}/>
               </>
             }
