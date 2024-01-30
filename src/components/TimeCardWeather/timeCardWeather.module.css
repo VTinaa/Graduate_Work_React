@@ -68,3 +68,24 @@
     flex-direction: row;
     gap: 10px;
 }
+
+
+/* Modal bgc */
+.bgc-storm {
+    background-image: url("https://mf-static.meteofor.st/assets/bg-desktop/n_c3_r2.jpg");
+}
+.bgc-rain {
+    background-image: url("https://mf-static.meteofor.st/assets/bg-desktop/n_c3_r2.jpg");
+}
+
+.bgc-clear {
+    background-image: url("https://mf-static.meteofor.st/assets/bg-desktop/d.jpg");
+}
+.bgc-partly-cloudy {
+    background-image: url("https://mf-static.meteofor.st/assets/bg-desktop/d_c1.jpg");
+}
+.bgc-cloud {
+    background-image: url("https://mf-static.meteofor.st/assets/bg-desktop/d_c3.jpg");
+}
+
+

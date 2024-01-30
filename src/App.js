@@ -20,12 +20,12 @@ import { useState } from 'react';
 const getCurrentWeatherType = () => {
   const currentHour = new Date().getHours();
   // return currentHour >= 0 && currentHour < 12 ? 'day' : 'nigth';
+    // між опівночі i 12год дня
   return currentHour >= 0 && currentHour < 12 ? 'nigth' : 'day';
 };
-// 51.5073219
-// -0.1276474
+
 function App() {
-  const [coordinates, setCoordinates] = useState({lat: 44.34, lon: 10.99});
+  const [coordinates, setCoordinates] = useState({lat: 50.6196175, lon: 26.2513165});
   // const weatherType = "cloud";
 
   // const weatherClassName = classNames('App', 
