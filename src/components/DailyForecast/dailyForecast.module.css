@@ -2,3 +2,6 @@
     display: flex;
     gap: 10px;
 }
+.underway {
+    color: #fff;
+}

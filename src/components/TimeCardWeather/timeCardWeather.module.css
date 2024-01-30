@@ -54,38 +54,83 @@
 
 /* Modal */
 .detail-card {
+    width: 430px;
     padding: 20px;
     background-color: #fff;
     border-radius: 5px;
     background: linear-gradient(180deg, rgba(184, 183, 183, 0.79) 0%, rgba(240, 245, 255, 0.201) 100%);
-    backdrop-filter: blur(3px);
+    /* backdrop-filter: blur(3px); */
     color: #fff;
     font-size: 24px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+.detail-card p {
+    /* font-family: 'Alleyn-Bold'; */
+    
+    margin: 20px auto;
+}
+
+.detail-flex-day {
+    font-family: 'Alleyn-Bold';
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 0;
+    font-size: 26px;
+}
+.detail-flex-day p {
+    margin-bottom: 0;
 }
 
 .detail-flex {
+    font-family: 'Alleyn-Bold';
     display: flex;
+    justify-content: space-around;
     flex-direction: row;
     gap: 10px;
+    font-size: 28px;
+}
+
+.text {
+    font-family: 'Alleyn-medium';
+    font-size: 28px;
+}
+
+.icon {
+    font-family: 'Alleyn-medium';
+    font-size: 28px;
+}
+.fa-solid {
+    font-style: 30px;
 }
 
 
 /* Modal bgc */
 .bgc-storm {
     background-image: url("https://mf-static.meteofor.st/assets/bg-desktop/n_c3_r2.jpg");
+    opacity: 0.9;
 }
 .bgc-rain {
     background-image: url("https://mf-static.meteofor.st/assets/bg-desktop/n_c3_r2.jpg");
+    opacity: 0.9;
 }
 
 .bgc-clear {
     background-image: url("https://mf-static.meteofor.st/assets/bg-desktop/d.jpg");
+    opacity: 0.9;
 }
 .bgc-partly-cloudy {
     background-image: url("https://mf-static.meteofor.st/assets/bg-desktop/d_c1.jpg");
+    opacity: 0.9;
 }
 .bgc-cloud {
     background-image: url("https://mf-static.meteofor.st/assets/bg-desktop/d_c3.jpg");
+    opacity: 0.9;
 }
 
 

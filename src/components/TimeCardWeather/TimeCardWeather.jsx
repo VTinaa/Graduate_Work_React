@@ -44,17 +44,17 @@ const TimeCardWeather = (props) => {
     const getStaticIcon = () => {
 
         if (weather >= 200 && weather <= 232) {
-            return <i class="fa-solid fa-cloud-showers-heavy"></i> 
+            return <i class="fa-solid fa-cloud-showers-heavy fa-2x"></i> 
         } else if (weather > 232 && weather < 800) {
-            return <i class="fa-solid fa-cloud-rain"></i>
+            return <i class="fa-solid fa-cloud-rain fa-2x"></i>
         } else if (weather == 800) {
-            return <i class="fa-solid fa-sun"></i>
+            return <i class="fa-solid fa-sun fa-2x"></i>
         } else if (weather > 800 && weather < 803) {
-            return <i class="fa-solid fa-cloud-sun"></i>
+            return <i class="fa-solid fa-cloud-sun fa-2x"></i>
         } else if (weather == 803 || weather == 804) {
-            return <i class="fa-solid fa-cloud"></i>
+            return <i class="fa-solid fa-cloud fa-2x"></i>
         } else {
-            return <i class="fa-solid fa-cloud-sun-rain"></i>
+            return <i class="fa-solid fa-cloud-sun-rain fa-2x"></i>
         }
     }
 
@@ -91,16 +91,22 @@ const TimeCardWeather = (props) => {
 
             <Modal showModal={showModal} openModalFunc={setShowModal} onClose={onClose}>
                 <div className={`${styles['detail-card']} ${styles[getWeatherType()]}`}>
+
+                    <div className={styles['detail-flex-day']}>
+                        <p>Morning</p>
+                        <p>Day</p>
+                        <p>Evening</p>
+                    </div>
+
                     <div className={styles['detail-flex']}>
                         <p>{`${Math.round(detailedTempData.temp_morning)}°`}</p>
                         <p>{`${Math.round(detailedTempData.temp_day)}°`}</p>
                         <p>{`${Math.round(detailedTempData.temp_evening)}°`}</p>
                     </div>
-                    <p>air humidity {Math.round(detailedTempData.humidity)}%</p>
-                    { 
-                        getStaticIcon(weather) 
-                    }
-                    <p>weather: </p>
+
+                    <p className={styles['text']}><i class="fa-solid fa-droplet fa-2x"></i> : {Math.round(detailedTempData.humidity)}%</p>
+
+                    <p className={styles['icon']}>weather: { getStaticIcon(weather) }</p>
                 </div>
             </Modal>
 

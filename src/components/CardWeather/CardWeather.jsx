@@ -50,6 +50,7 @@ const CardWeather = (props) => {
                 <div className={styles['title-temp']}>
                     {getWeatherIcon()}
                     {/* <Storm /> */}
+                    {/* <Sun /> */}
                     <p className={styles['p-temp']}>{temp}</p>
                 </div>
                 <div>

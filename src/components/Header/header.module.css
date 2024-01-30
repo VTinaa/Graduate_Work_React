@@ -7,7 +7,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 15px;
+    padding-top: 25px;
         /* height: 100px; */
 }
 .header h1{
@@ -24,7 +24,7 @@
     color: rgba(57, 57, 57, 0.656);
     font-size: 50px;
     left: 102px;
-    top: 20px;
+    top: 30px;
     transition: color 0.3s ease;
 }
 .header i:hover {

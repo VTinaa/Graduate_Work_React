@@ -81,24 +81,27 @@ useEffect(() => {
     return (
         <PageWrapper>
             <h2>Daily Forecast 16 days </h2>
+
+            <h1 className={styles['underway']}>UNDERWAY DEVELOPER...</h1>
+
             <div className={styles['common']}>
 
-            {weatherData && weatherData.list && weatherData.list.length > 0 && (
-                weatherData.list.map((item, index) => (
-                    <DetailedCardWeather
-                        key={index}
-                        name={weatherData.city.name}
-                        id={weatherData.city.id}
-                        day={item.temp.day}
-                        night={item.temp.night}
-                        humidity={item.humidity}
-                        description={item.weather[0].description}
-                        gust={item.gust}
-                        rain={item.rain}
-                        icon={item.weather[0].icon}
-                    />
-                ))
-            )}
+              {weatherData && weatherData.list && weatherData.list.length > 0 && (
+                  weatherData.list.map((item, index) => (
+                      <DetailedCardWeather
+                          key={index}
+                          name={weatherData.city.name}
+                          id={weatherData.city.id}
+                          day={item.temp.day}
+                          night={item.temp.night}
+                          humidity={item.humidity}
+                          description={item.weather[0].description}
+                          gust={item.gust}
+                          rain={item.rain}
+                          icon={item.weather[0].icon}
+                      />
+                  ))
+              )}
 
             </div>
         </PageWrapper>
