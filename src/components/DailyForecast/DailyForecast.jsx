@@ -2,12 +2,10 @@ import styles from './dailyForecast.module.css';
 import { useState, useEffect, useContext } from 'react';
 
 import PageWrapper from '../PageWrapper/PageWrapper';
-import TimeCardWeather from '../TimeCardWeather/TimeCardWeather';
 import DetailedCardWeather from '../DetailedCardWeather/DetailedCardWeather';
 
 import CoordinatesContext from '../../Contexts';
 
-// https://api.openweathermap.org/data/2.5/forecast/daily?lat={lat}&lon={lon}&cnt=16&appid={API key}
 
 
 const DailyForecast = () => {

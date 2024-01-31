@@ -2,15 +2,7 @@ import classNames from 'classnames';
 
 import styles from './storm.module.css'
 
-const Storm = (stormTopPosition) => {
-
-    // const stormClassName = classNames(
-    //     styles['partly-cloudy-sun'],
-    //     {
-    //         [styles['small-padding']] : topPosition,
-    //         [styles['small-width']] : topPosition
-    //     }
-    // );
+const Storm = ({stormTopPosition}) => {
 
     const stormClassName = classNames(
         styles['thundery'],

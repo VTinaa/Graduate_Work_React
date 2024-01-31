@@ -31,7 +31,7 @@ const TimeCardWeather = (props) => {
         } else if (weather > 232 && weather < 800) {
             return <Rain smallTopPadding />
         } else if (weather == 800) {
-            return <Sun topPosition />
+            return <Sun suntopPosition />
         } else if (weather > 800 && weather < 803) {
             return <PartlyCloudy smallTopPadding />
         } else if (weather == 803 || weather == 804) {
@@ -76,7 +76,7 @@ const TimeCardWeather = (props) => {
 
     return(
         <div className={styles['common__row']} onClick={onShow}>
-            {/*  Now || 11am */}
+
             <h3 className={styles['time__title']}>{date}</h3>
             { 
                 getWeatherIcon() 

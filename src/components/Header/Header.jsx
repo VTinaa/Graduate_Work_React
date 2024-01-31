@@ -1,7 +1,8 @@
-import PageWrapper from '../PageWrapper/PageWrapper';
 import styles from './header.module.css'
-// import img from '../../images/10844370.png'
+
+import PageWrapper from '../PageWrapper/PageWrapper';
 import Logo from '../Logo/Logo'
+
 import { useState } from 'react';
 
 
@@ -25,10 +26,9 @@ const Header = ({ setCoordinates }) => {
         <div className={styles['common']}>
             <PageWrapper>
                 <header className={styles['header']}>
-                    {/* <h1>SkyView</h1> */}
+
                     <Logo />
 
-                    {/* <i class="fa-solid fa-cloud-moon"></i> */}
                     <form onSubmit={onSubmit}>
                         <input
                             type="text"

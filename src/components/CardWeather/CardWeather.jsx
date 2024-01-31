@@ -23,9 +23,11 @@ const CardWeather = (props) => {
             return <Rain />
         } else if (weather == 800) {
             // return  currentHour >= 0 && currentHour < 12 ? <Sun /> : <Moon />
+            // між опівночі i 12год дня
             return  currentHour >= 0 && currentHour < 12 ? <Moon /> : <Sun />
         } else if (weather > 800 && weather < 803) {
             // return currentHour >= 0 && currentHour < 12 ? <PartlyCloudy /> : <MoonPartyCloudy/>
+            // між опівночі i 12год дня
             return currentHour >= 0 && currentHour < 12 ? <MoonPartyCloudy/> : <PartlyCloudy />
         } else if (weather == 803 || weather == 804) {
             return <Clouds />
@@ -48,9 +50,9 @@ const CardWeather = (props) => {
 
             <div className={styles['container__weather']}>
                 <div className={styles['title-temp']}>
+
                     {getWeatherIcon()}
-                    {/* <Storm /> */}
-                    {/* <Sun /> */}
+
                     <p className={styles['p-temp']}>{temp}</p>
                 </div>
                 <div>

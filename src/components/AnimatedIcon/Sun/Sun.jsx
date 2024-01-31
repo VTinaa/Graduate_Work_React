@@ -3,12 +3,12 @@ import classNames from 'classnames';
 import styles from './sun.module.css'
 
 
-const Sun = (topPosition) => {
+const Sun = ({suntopPosition}) => {
     const sunClassName = classNames(
         styles['sunny'],
         {
-            [styles['small-top']] : topPosition,
-            [styles['small-width']] : topPosition
+            [styles['small-top']] : suntopPosition,
+            [styles['small-width']] : suntopPosition
         }
     );
     // использовать sunClassName
